@@ -501,7 +501,7 @@ void setup() {
   StalkerEffect.variant = STALKER(BlazingTrail);
   StalkerEffect.activate();
 
-  // SpaceCadet conffiguration
+  // SpaceCadet configuration
   SpaceCadet.map = spaceCadetMap;
 }
 
