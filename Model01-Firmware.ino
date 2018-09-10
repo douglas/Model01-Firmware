@@ -65,6 +65,21 @@
 // Support for USB quirks, like changing the key state report protocol
 #include "Kaleidoscope-USB-Quirks.h"
 
+// Support for SpaceCadet
+#include "Kaleidoscope-SpaceCadet.h"
+
+// SpaceCadet configuration
+static const int spaceCadetTimeout = 250;
+static kaleidoscope::SpaceCadet::KeyBinding spaceCadetMap[] = {
+  {  Key_LeftShift,     Key_LeftParen,          spaceCadetTimeout}
+  , {Key_RightShift,    Key_RightParen,         spaceCadetTimeout}
+  , {Key_LeftGui,       Key_LeftCurlyBracket,   spaceCadetTimeout}
+  , {Key_LeftAlt,       Key_RightCurlyBracket,  spaceCadetTimeout}
+  , {Key_LeftControl,   Key_LeftBracket,        spaceCadetTimeout}
+  , {Key_RightControl,  Key_RightBracket,       spaceCadetTimeout}
+  , SPACECADET_MAP_END
+};
+
 /** This 'enum' is a list of all the macros used by the Model 01's firmware
   * The names aren't particularly important. What is important is that each
   * is unique.
@@ -452,6 +467,9 @@ KALEIDOSCOPE_INIT_PLUGINS(
   // same time.
   MagicCombo,
 
+  // Other plugins
+  SpaceCadet,
+
   // The USBQuirks plugin lets you do some things with USB that we aren't
   // comfortable - or able - to do automatically, but can be useful
   // nevertheless. Such as toggling the key report protocol between Boot (used
@@ -488,6 +506,8 @@ void setup() {
   // This avoids over-taxing devices that don't have a lot of power to share
   // with USB devices
   LEDOff.activate();
+  // SpaceCadet conffiguration
+  SpaceCadet.map = spaceCadetMap;
 }
 
 /** loop is the second of the standard Arduino sketch functions.
