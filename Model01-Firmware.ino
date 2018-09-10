@@ -498,7 +498,7 @@ void setup() {
   LEDRainbowWaveEffect.brightness(150);
 
   // Use stalker effect by default
-  StalkerEffect.variant = STALKER(BlazingTrail);
+  StalkerEffect.variant = STALKER(Haunt);
   StalkerEffect.activate();
 
   // SpaceCadet configuration
