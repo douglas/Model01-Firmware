@@ -73,7 +73,7 @@ static const int spaceCadetTimeout = 250;
 static kaleidoscope::SpaceCadet::KeyBinding spaceCadetMap[] = {
   {  Key_LeftShift,     Key_LeftParen,          spaceCadetTimeout}
   , {Key_RightShift,    Key_RightParen,         spaceCadetTimeout}
-  , {Key_LeftGui,       Key_LeftCurlyBracket,   spaceCadetTimeout}
+  , {Key_RightAlt,      Key_LeftCurlyBracket,   spaceCadetTimeout}
   , {Key_LeftAlt,       Key_RightCurlyBracket,  spaceCadetTimeout}
   , {Key_LeftControl,   Key_LeftBracket,        spaceCadetTimeout}
   , {Key_RightControl,  Key_RightBracket,       spaceCadetTimeout}
